@@ -14,7 +14,7 @@ export default function Soldier(props) {
 //  const soldierStopPos = soldierPositionStore(state => state.soldierDestPosition);
 
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/Soldier.glb');
+  const { nodes, materials, animations } = useGLTF(window.location.href + '/Soldier.glb');
   const [previousAnimation, setPreviousAnimation] = useState(0);
 
   const actions = useRef()
@@ -98,4 +98,4 @@ export default function Soldier(props) {
 }
 
 
-useGLTF.preload('/Soldier.glb')
+useGLTF.preload(window.location.href + '/Soldier.glb')
