@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/3js_React_Raycasting_Character_Demo/static/css/main.1ac88b60.css",
+    "main.js": "/3js_React_Raycasting_Character_Demo/static/js/main.61593ebd.js",
+    "index.html": "/3js_React_Raycasting_Character_Demo/index.html",
+    "main.1ac88b60.css.map": "/3js_React_Raycasting_Character_Demo/static/css/main.1ac88b60.css.map",
+    "main.61593ebd.js.map": "/3js_React_Raycasting_Character_Demo/static/js/main.61593ebd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1ac88b60.css",
+    "static/js/main.61593ebd.js"
+  ]
+}
