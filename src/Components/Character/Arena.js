@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Canvas, useFrame } from "react-three-fiber";
-// import { EffectComposer, Bloom } from '@react-three/postprocessing'
+//import { extend } from '@react-three/fiber';
+import { EffectComposer, Bloom } from '@react-three/postprocessing'
 
 //import Soldier from './Components/Soldier'
 import PlayerCam from './PlayerCam'
@@ -23,13 +24,13 @@ function BoxObjects(props) {
 
   return (
     <mesh ref={ref} {...props} >
-      <boxBufferGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial
-          attach="material"
-          color="white"
-          roughness={0.2}
-          metalness={0.8}
-        />
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial
+        attach="material"
+        color="white"
+        roughness={0.2}
+        metalness={0.8}
+      />
     </mesh>
   )
 }
@@ -63,7 +64,7 @@ function Arena() {
             onChange={handleChange}
           />
           Strategy setting
-        </label> 
+        </label>
         <label>
           <input
             type="radio"
@@ -73,14 +74,14 @@ function Arena() {
             onChange={handleChange}
           />
           Third person setting
-        </label> 
+        </label>
       </div>
       <Canvas>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
-        {selectedValue === options.PLAYER_CAM && <PlayerCam/>}
+        {selectedValue === options.PLAYER_CAM && <PlayerCam />}
         {selectedValue === options.STRATERGY && <StrategySetting />}
-        {selectedValue === options.THIRD_PERSON && <ThirdPersonSetting /> }
+        {selectedValue === options.THIRD_PERSON && <ThirdPersonSetting />}
         <BoxObjects position={[10, 2, 10]} />
         <mesh visible position={[0, 1, -10]} rotation={[0, 0, 0]}>
           <sphereGeometry attach="geometry" args={[1, 32, 32]} />
@@ -92,9 +93,9 @@ function Arena() {
           />
         </mesh>
 
-        {/* <EffectComposer>
-        <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={500} />
-      </EffectComposer> */}
+        <EffectComposer>
+          <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={500} />
+        </EffectComposer>
       </Canvas>
     </>
   );

@@ -1,9 +1,9 @@
 import React, { useRef, useState } from "react";
 import { Circle } from "@react-three/drei";
 import { Canvas, useFrame, extend, useThree } from "react-three-fiber";
-import { PerspectiveCamera } from "@react-three/drei/PerspectiveCamera";
+import { PerspectiveCamera } from "@react-three/drei";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-// import { EffectComposer, DepthOfField, Bloom, Noise, Vignette } from '@react-three/postprocessing'
+import { EffectComposer, DepthOfField, Bloom, Noise, Vignette } from '@react-three/postprocessing'
 
 extend({ OrbitControls });
 
@@ -59,7 +59,7 @@ function RaycastDemo() {
         position={[0, -1, 0]}
         rotation={[-Math.PI / 2, 0, 0]}
       >
-        <planeBufferGeometry attach="geometry" args={[100, 100]} />
+        <planeGeometry attach="geometry" args={[100, 100]} />
         <meshStandardMaterial attach="material" color="gray" />
       </mesh>
 
@@ -71,12 +71,12 @@ function RaycastDemo() {
         near={1}
         far={1000}
       />
-      {/* <EffectComposer> */}
-        {/* <DepthOfField focusDistance={0} focalLength={0.45} bokehScale={2} height={480} /> */}
-        {/* <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={500} /> */}
-        {/* <Noise opacity={0.02} /> */}
-        {/* <Vignette eskil={false} offset={0.1} darkness={1.1} /> */}
-      {/* </EffectComposer> */}
+      <EffectComposer>
+        <DepthOfField focusDistance={0} focalLength={0.45} bokehScale={2} height={480} />
+        <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={500} />
+        <Noise opacity={0.02} />
+        <Vignette eskil={false} offset={0.1} darkness={1.1} />
+      </EffectComposer>
     </Canvas>
   );
 }

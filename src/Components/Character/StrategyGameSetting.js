@@ -2,9 +2,7 @@ import React, { Suspense, useRef, useState, useEffect } from "react";
 //import { MapControls } from "three/examples/jsm/controls/OrbitControls";
 import { Circle } from "@react-three/drei";
 import { useFrame } from "react-three-fiber";
-import { MapControls } from '@react-three/drei/MapControls'
-import { PerspectiveCamera } from "@react-three/drei/PerspectiveCamera";
-
+import { MapControls, PerspectiveCamera } from '@react-three/drei'
 
 import Soldier from './Soldier'
 import soldierStatesStore from '../../Stores/SoldierStateStore'
@@ -117,7 +115,7 @@ function StrategyGameSetting(props) {
         onPointerMove={raycastPlane}
         onClick={setSoldierDestination}
       >
-        <planeBufferGeometry attach="geometry" args={[100, 100]} />
+        <planeGeometry attach="geometry" args={[100, 100]} />
         <meshStandardMaterial attach="material" color="gray" />
       </mesh>
       <LocationPointer pointerPosition={pointerPosition}/>

@@ -3,7 +3,7 @@ import lerp from 'lerp'
 import * as THREE from 'three'
 
 import { useFrame, useThree } from "react-three-fiber";
-import { PerspectiveCamera } from "@react-three/drei/PerspectiveCamera";
+import { PerspectiveCamera } from "@react-three/drei";
 
 import Soldier from './Soldier'
 import soldierStatesStore from '../../Stores/SoldierStateStore'
@@ -35,7 +35,7 @@ function Dome(props) {
 
   return (
     <mesh ref={ref} visible position={[0, -1, 0]} >
-      <boxBufferGeometry args={[-100, -100, -100]} />
+      <boxGeometry args={[-100, -100, -100]} />
       <meshPhongMaterial attach="material" color="#f3f3f3" doubleside />
     </mesh>
   )
@@ -123,7 +123,7 @@ function ThirdPersonSetting(props) {
         position={[0, 0, 0]}
         rotation={[-Math.PI / 2, 0, 0]}
       >
-        <planeBufferGeometry attach="geometry" args={[100, 100]} />
+        <planeGeometry attach="geometry" args={[100, 100]} />
         <meshStandardMaterial attach="material" color="gray" />
       </mesh>
       <Dome />

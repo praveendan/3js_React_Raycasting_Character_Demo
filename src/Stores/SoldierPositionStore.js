@@ -1,4 +1,4 @@
-import create from 'zustand'
+import {create} from 'zustand'
 import * as THREE from 'three'
 
 const soldierPositionStore = create(set => ({

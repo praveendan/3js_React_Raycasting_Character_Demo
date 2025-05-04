@@ -1,6 +1,6 @@
 import React, { Suspense, useRef, useState, useEffect } from "react";
 import { useFrame, extend, useThree } from "react-three-fiber";
-import { PerspectiveCamera } from "@react-three/drei/PerspectiveCamera";
+import { PerspectiveCamera } from "@react-three/drei";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 import Soldier from './Soldier'
